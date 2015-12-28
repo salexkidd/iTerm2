@@ -5956,6 +5956,10 @@ static NSTimeInterval kMinimumPartialLineTriggerCheckInterval = 0.5;
 }
 
 - (BOOL)screenShouldInitiateWindowResize {
+    NSLog(@"%@: %d", KEY_DISABLE_WINDOW_RESIZING,
+          [[[self profile] objectForKey:KEY_DISABLE_WINDOW_RESIZING] boolValue]);
+    NSLog(@"%@", [self.profile description]);
+
     return ![[[self profile] objectForKey:KEY_DISABLE_WINDOW_RESIZING] boolValue];
 }
 
